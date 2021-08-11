@@ -5,7 +5,7 @@
 
   tasks:
     - name: "Include gotmax23.{{ role_name }}"
-      include_role:
+      ansible.builtin.include_role:
         name: "gotmax23.{{ role_name }}"
 {#
 # vim: set filetype=yaml.jinja2:
