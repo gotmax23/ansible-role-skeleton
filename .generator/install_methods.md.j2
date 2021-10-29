@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+SPDX-License-Identifier: MIT
+-->
+### Available Installation Methods
+
+This roles allows you to chose which source to install {{ role_name | regex_replace('_' ' ') | title }} from. You may override the default installation source/method by setting `{{ role_name }}_install_method` to one of the values outlined below.
+
+#### `{{ role_name }}_install_method=distro_package`
+
+**Description:** This installs {{ role_name | regex_replace('_' ' ') | title }} from the distribution's repositories.
+
+**Supported Distributions:** All distributions supported by this role
+
+**Default:** Yes
+
+
+#### `{{ role_name }}_install_method=other`
+
+**Description:**
+
+**Supported Distributions:**
+
+**Default:** No

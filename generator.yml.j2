@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+- name: Generate files
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    generator_molecule_wflow_test:
+      skip_test_step: true
+      steps:
+        - name: "Molecule test: {{ role_name }}_state=present"
+          env:
+            {{ role_name }}_state: present
+          run: molecule test -s single --destroy never
+        - name: "Molecule test: {{ role_name }}_state=absent"
+          env:
+            {{ role_name }}_state: absent
+          run: molecule test -s single --destroy never
+        - name: Molecule destroy
+          if: always()
+          run: molecule destroy -s single
+
+  roles:
+    - gotmax23.generator
+
+# vim: set filetype=yaml.ansible:

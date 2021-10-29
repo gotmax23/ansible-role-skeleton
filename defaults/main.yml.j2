@@ -1,2 +1,7 @@
+# SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: CC0-1.0
 ---
-# defaults file for {{ role_name }}
+# Options:
+# - `present` ensures that {{ role_name | regex_replace('_' ' ') | title }} is installed
+# - `absent` ensures that {{ role_name | regex_replace('_' ' ') | title }} is not installed.
+{{ role_name }}_state: present
