@@ -1,8 +1,11 @@
+#!/usr/bin/env ansible-playbook
+
 # SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
 # SPDX-License-Identifier: MIT
 ---
 - name: Generate files
   hosts: localhost
+  connection: local
   gather_facts: false
 
   vars:

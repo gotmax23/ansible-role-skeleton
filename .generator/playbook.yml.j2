@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2021 Maxwell G (@gotmax23)
 # SPDX-License-Identifier: CC0-1.0
 ---
-- name: Install {{ role_name }}
+- name: Install {{ role_name | regex_replace('_' ' ') | title }}
   hosts: all
   become: true
 
@@ -12,7 +12,7 @@
         update_cache: true
         cache_valid_time: 3600
 
-    - name: Install {{ role_name }}
+    - name: Install {{ role_name | regex_replace('_' ' ') | title }}
       ansible.builtin.include_role:
         name: "gotmax23.{{ role_name }}"
 {#
